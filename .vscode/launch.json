@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Actividad5Application<actividad5>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "actividad5.demo.Actividad5Application",
+            "projectName": "actividad5",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

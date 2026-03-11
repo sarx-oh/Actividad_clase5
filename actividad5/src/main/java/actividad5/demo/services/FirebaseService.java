@@ -13,6 +13,7 @@ public class FirebaseService {
 
     public String guardarDato() {
 
+
         try {
 
             // obtener instancia de Firestore
@@ -35,4 +36,26 @@ public class FirebaseService {
             return "Error al guardar datos";
         }
     }
+
+    public String registrarUsuario(String nombre, String email, String password) {
+        try {
+            Firestore db = FirestoreClient.getFirestore();
+
+            Map<String, Object> userData = new HashMap<>();
+            userData.put("nombre", nombre);
+            userData.put("email", email);
+            userData.put("password", password);
+
+            db.collection("users")
+                    .document(email)
+                    .set(userData);
+
+            return "Usuario registrado correctamente";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error al registrar usuario";
+        }
+    }
+
 }
